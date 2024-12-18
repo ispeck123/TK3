@@ -1,0 +1,66 @@
+<header class="flx-hdr" *ngIf="isLoggedIn == true">
+    <a href="javascript:void(0);"><img src="./assets/images/logo.png" class="new-logo" /></a>
+    <a href="javascript:void(0);"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a>
+</header>
+
+<div class="header" *ngIf="isLoggedIn == true">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 col-sm-6 col-7 order-lg-1 order-sm-1 order-1">
+                <!-- <div class="buttonPannel">
+                    <a class="logo" href="index.html"><img src="assets/images/HDB_Logo.png" alt="" style="width: 60px;"></a>
+                    <a class="logo" href="index.html"><img src="assets/images/logo-inner.png" alt=""></a>
+                </div> -->
+            </div>
+            <div class="col-lg-2 col-sm-12 order-lg-2 order-sm-3 order-3">
+                <!-- <input type="text" placeholder="  &#xF002; Search for anything ..." id="iconified" class="empty"> -->
+            </div>
+            <div class="col-lg-8 col-sm-6 col-5 order-lg-3 order-sm-2 order-2 text-right">
+                <div class="ryt-pnl">
+                    <!-- <div class="notification">
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0);" class="user-drp" >
+                                    <span>4</span>
+                                    <i class="fa fa-bell-o" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div> -->
+                    <span class="welcome"> ROLE NAME AND NAME </span>
+                    <div class="user">
+                        <span href="javascript:void(0);" class="user-drp" (click)="onShowMenu()"><i
+                                class="fa fa-user-circle-o" aria-hidden="true"></i>
+                            <div class="pfl-drp" [hidden]=ishidden>
+                                <ul>
+                                    <!-- <li>
+                                        <a href="javascript:void(0);">
+                                        My profile
+                                        </a>
+                                        </li>
+                                        <li>
+                                        <a href="javascript:void(0);">
+                                        Notification
+                                        </a>
+                                        </li>
+                                        <li>
+                                        <a href="javascript:void(0);">
+                                        Message
+                                        </a>
+                                        </li> -->
+                                    <li>
+                                        <a href="javascript:void(0);" (click)="clickMenu('logout')">
+                                            Log out
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </span>
+                    </div>
+                    <button class="sidebarBtn"><span></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End -->

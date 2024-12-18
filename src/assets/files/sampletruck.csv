@@ -1,0 +1,4 @@
+sno,vehno,IUnumber,owner,sitecode,status,regdate,unladenweight,DriverName,Maxload,longveh,gpsvendor,Driver ID
+1,XZ5679G,99999991,x,APSGALP085,0,01052021,12500,y,28000,0,V3,1
+2,XZ5679H,99999992,x,APSGALP085,0,01052021,13400,y,28000,0,V3,1
+3,XZ5679I,99999993,x,APSGALP085,0,01052021,12050,y,28000,0,V3,1

@@ -1,0 +1,71 @@
+.left-panel {
+    background-color: #ebe4e4;
+    position: fixed;
+    right: -320px;
+    width: 320px;
+    height: 70%;
+    transition: right 0.3s ease;
+    padding: 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 999999;
+  }
+  
+  .left-panel.open {
+    right: 0;
+  }
+
+  .ta-button-demo {
+    position: fixed; /* Ensures the button is fixed on the screen */
+    top: 20px; /* Distance from the top of the screen */
+    right: 20px; /* Floats on the left-most side of the screen */
+    background-color: #801c1e; /* Button color */
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    z-index: 9999; /* Keeps the button above other elements */
+    font-size: 20px; /* Button text size */
+    border-radius: 5px; /* Optional: for rounded corners */
+    width: 50px;
+  }
+
+  .ta-button-close{
+    background-color: #801c1e; /* Button color */
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    z-index: 9999; /* Keeps the button above other elements */
+    font-size: 20px; /* Button text size */
+    border-radius: 5px; /* Optional: for rounded corners */
+    width: 50px;
+  }
+
+  
+  /* Content Styles */
+.panel-content {
+    padding: 10px;
+    overflow-y: auto;
+    max-height: calc(100% - 50px); /* Adjusts height to allow scrolling */
+  }
+  
+  /* List Styles */
+  .panel-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    padding-top: 25px;
+  }
+  
+  .panel-content li {
+    font-size: clamp(0.8rem, 1vw, 2rem); 
+    color: #801c1e;
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+  }
+  
+  .panel-content li:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }

@@ -1,0 +1,145 @@
+<app-menu></app-menu>
+<div class="dashboard-box">
+    <div class="dashboard-inner-box">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <h4 class="hdn-dsh">Dashboard</h4>
+            </div>
+            <div class="col-md-6 col-sm-12 inln-frm">
+                <form class="dt-src-frm">
+                    <input type="date" />
+                    <span>To</span>
+                    <input type="date" />
+                    <button type="button" class="dt-src-btn" >
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="row dsh-row">
+            <div class="col-md-6 col-sm-12">
+                <a href="#">
+                <div class="dashboard-inner-item">
+                    <span class="box-txt">Source site summary</span>
+                    <ul>
+                        <li>
+                            <span>{{dashboardData.siteDetail.approvedSite}}</span>
+                            <label>Approved sites</label>
+                        </li>
+                        <li>
+                            <span>{{dashboardData.siteDetail.activeSite}}</span>
+                            <label>Active sites</label>
+                        </li>
+                        <li>
+                            <span>{{dashboardData.siteDetail.expiredSite}}</span>
+                            <label>Expired sites</label>
+                        </li>
+                        <li>
+                            <span>{{dashboardData.siteDetail.completedSite}}</span>
+                            <label>Completed sites</label>
+                        </li>
+                    </ul>
+                </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <a href="#">
+                <div class="dashboard-inner-item">
+                    <span class="box-txt lft-35">User Summary</span>
+                    <ul>
+                        <li>
+                            <span>{{dashboardData.userDetail.ccUser}}</span>
+                            <label>CC User</label>
+                        </li>
+                        <li>
+                            <span>{{dashboardData.userDetail.netsUser}}</span>
+                            <label>NETS User</label>
+                        </li>
+                        <li>
+                            <span>{{dashboardData.userDetail.sgoUser}}</span>
+                            <label>SGO User</label>
+                        </li>
+                        <li>
+                            <span>{{dashboardData.userDetail.wboUser}}</span>
+                            <label>WB Operator</label>
+                        </li>
+                    </ul>
+                </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <a href="#">
+                    <!-- <div class="dashboard-inner-item">
+                        <span class="box-txt lft-35">Transaction Summary</span>
+                        <ul>
+                            <li>
+                                <span>{{selectedSG == 'APSG'?(dashboardData.aPSGTranDetail?dashboardData.aPSGTranDetail.totalSC:0):(dashboardData.tMSGTranDetail?dashboardData.tMSGTranDetail.totalSC:0)}}</span>
+                                <label>SC transaction</label>
+                            </li>
+                            <li>
+                                <span>{{selectedSG == 'APSG'?(dashboardData.aPSGTranDetail?dashboardData.aPSGTranDetail.totalEToken:0):(dashboardData.tMSGTranDetail?dashboardData.tMSGTranDetail.totalEToken:0)}}</span>
+                                <label>E-Tokens generated</label>
+                            </li>
+                            <li>
+                                <span>{{selectedSG == 'APSG'?(dashboardData.aPSGTranDetail?dashboardData.aPSGTranDetail.totalGE:0):(dashboardData.tMSGTranDetail?dashboardData.tMSGTranDetail.totalGE:0)}}</span>
+                                <label>GE transaction</label>
+                            </li>
+                            <li>
+                                <span>{{selectedSG == 'APSG'?(dashboardData.aPSGTranDetail?dashboardData.aPSGTranDetail.bannedDriver:0):(dashboardData.tMSGTranDetail?dashboardData.tMSGTranDetail.bannedDriver:0)}}</span>
+                                <label>Banned Drivers</label>
+                            </li>
+                        </ul>
+                    </div> -->
+                    </a>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <a href="#">
+                <div class="dashboard-inner-item">
+                    <span class="box-txt lft-85">Approvals PENDING</span>
+                    <div class="pndn-box">
+                        <!-- <div class="pndn-item">
+                            <p>User Activation </p>
+                            <small>45</small>
+                        </div> -->
+                        <div class="pndn-item">
+                            <p>Initial Approval
+                            </p>
+                            <small>{{dashboardData.pendingApprovalDetail.pendingInitialApproval}}</small>
+                        </div>
+                        <div class="pndn-item">
+                            <p>JS Approval </p>
+                            <small>{{dashboardData.pendingApprovalDetail.pendingJSApproval}}</small>
+                        </div>
+                        <div class="pndn-item">
+                            <p>Acknowledgement Form Approval </p>
+                            <small>{{dashboardData.pendingApprovalDetail.pendingAcknowledgeApproval}}</small>
+                        </div>
+                        <div class="pndn-item">
+                            <p>Conditional Approval </p>
+                            <small>{{dashboardData.pendingApprovalDetail.pendingCondidtionalApproval}}</small>
+                        </div>
+                        <div class="pndn-item">
+                            <p>Soil Test Approval </p>
+                            <small>{{dashboardData.pendingApprovalDetail.pendingSoilTestApproval}}</small>
+                        </div>
+                        <div class="pndn-item">
+                            <p>VTS Approval</p>
+                            <small>{{dashboardData.pendingApprovalDetail.pendingVTSApproval}}</small>
+                        </div>
+                        <div class="pndn-item">
+                            <p>AER Request Approval</p>
+                            <small>{{dashboardData.pendingApprovalDetail.pendingAERApproval}}</small>
+                        </div>
+                        <div class="pndn-item">
+                            <p>BG Discharge Certificate Approval</p>
+                            <small>{{dashboardData.pendingApprovalDetail.pendingBGDischargeApproval}}</small>
+                        </div>
+                    </div>
+
+                </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</div>

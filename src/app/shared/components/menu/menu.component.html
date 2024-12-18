@@ -1,0 +1,15 @@
+
+<button class="ta-button-demo" (click)="togglePanel()">☰</button>
+<div class="left-panel" [ngClass]="{ 'open': isPanelOpen }" id="leftPanel">
+    <header class="panel-header">
+      <button class="ta-button-close" (click)="togglePanel()">X</button>
+    </header>
+    <div class="panel-content">
+        <ul>
+            <li >
+              SITE MANAGEMENT
+            </li>
+            
+          </ul>
+    </div>
+  </div>

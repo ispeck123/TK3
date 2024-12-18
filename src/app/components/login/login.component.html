@@ -1,0 +1,71 @@
+<header class="flx-hdr">
+    <!-- <a href="javascript:void(0);"><img src="./assets/images/HDB_Logo.png" class="new-logo" style="width: 75px;" /><img src="./assets/images/logo.png" class="new-logo" /></a> -->
+    <!-- <a href="javascript:void(0);">
+        <img src="./assets/images/logo-HDB.jpg" class="new-logo2" />
+        <img src="./assets/images/logo-TOA-Samsung.jpg" class="new-logo2" />		
+        <img src="./assets/images/logo-Hyundai.jpg" class="new-logo2" />
+        <img src="./assets/images/logo-echol.jpg" class="new-logo2" />
+    </a> -->
+    <!-- <a href="javascript:void(0);" data-toggle="modal" data-target="#manualDescModal"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a> -->
+</header>
+
+<div class="reg-container login">
+	<div class="reg-body">
+	<!-- <h5 class="esg-heading">East Staging Ground</h5> -->
+	<h4>Login</h4>
+		<div class="log-in-inr">
+			<form class="mdl-frm" [formGroup]="loginForm">
+
+				<div class="form-group">
+				<label>Username</label>
+                <input type="text" name="text" formControlName="username" class="form-control"
+                placeholder="Username">
+				</div>	
+
+				<div class="form-group">
+				<label>Password</label>
+                <input type="password" formControlName="password" class="form-control" name="text" maxlength="16" placeholder="Password" *ngIf="!enablePassword">
+                <input type="text" formControlName="password" class="form-control"name="text" placeholder="Password" *ngIf="enablePassword">
+				<a href="javascript:void(0);" (click)="viewPassword()" class="viewpass" >
+                    <img src="./assets/images/view.png" *ngIf="!enablePassword"/>
+                    <img src="./assets/images/view-hide.png" *ngIf="enablePassword"/>
+				</a>
+				</div>
+
+				<div class="form-group">
+					<p><label class="custom-chk">Keep me signed in
+					  <input type="checkbox" checked="checked">
+					  <span class="checkmark"></span>
+					</label></p>
+				</div>
+				<div class="form-group" style="margin: 0px;">
+					<button  type="button" class="login-btn" [disabled]="loading" (click)="onSubmit()">
+						Login
+					 </button>
+					<p class="or-txt"> <a data-toggle="modal" class="accept" data-target="#Modal" style="cursor: pointer;">Forgot Password ?</a></p> 
+
+					<button  type="button" (click)="onClickReg()" class="regis-btn">New Registration</button>
+					 
+				</div>
+			</form>
+		</div>
+
+        <!-- <div class="log-in-note-containter">
+			<div class="log-in-note">
+                <h5>
+                    APSG Help Line : 65134782<br>
+                    TMSG Help Line : 63576111<br>
+                    Application Helpline: 63576117
+                </h5>
+                <a href="javascript:void(0);" (click)="viewRefDocuments(1)">East Staging Grounds User Manual</a>
+                <a href="javascript:void(0);" (click)="viewRefDocuments(2)">Online Application User Guide</a>
+                <a href="javascript:void(0);" (click)="viewRefDocuments(3)">Closure Date 2023 (APSG)</a>
+                <a href="javascript:void(0);" (click)="viewRefDocuments(4)">Closure Date 2023 (TMSG)</a>
+                <a href="javascript:void(0);" (click)="viewRefDocuments(5)">Closure Date 2023 (Combined)</a>
+                <br />
+                <a href="javascript:void(0);" (click)="viewRefDocuments(6)">Revised Operation Hours From 19 Oct 2020</a>
+			</div>
+		</div> -->
+    </div>
+    <p class="cpryt">eConcierge V 1.1.0 Build 20201208. Copyright © 2020 Echol Tech Pte Ltd. All rights reserved.</p>
+</div>
