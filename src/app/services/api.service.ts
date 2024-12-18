@@ -6,14 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  // Apiurl = 'http://103.13.113.132:7890/'
+  Apiurl = 'http://192.168.1.8:5267/api/'
+  
+  constructor(private httpClient: HttpClient) { }
 
-  constructor() { }
-  // constructor(private httpClient: HttpClient) { }
-
-
-  // loginValidationService(obj: any): Observable<any> {
-  //   var reqHeader = new HttpHeaders({ 'Content-Type': 'application/json', 'No-Auth': 'True' });
-  //   return this.httpClient.post<any>(this.Apiurl + "user/login/otp/verification", obj, { headers: reqHeader });
-  // }
+  loginValidationService(obj: any): Observable<any> {
+    var reqHeader = new HttpHeaders({ 'Content-Type': 'application/json', 'No-Auth': 'True' });
+    return this.httpClient.post<any>(this.Apiurl + "Login/loginreq", obj, { headers: reqHeader });
+  }
 }

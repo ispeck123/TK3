@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 import { ToastrService } from 'ngx-toastr';
 declare var $: any; 
@@ -16,17 +16,14 @@ export class LoginComponent implements OnInit{
   submitted = false;
   enablePassword: boolean = false;
   loading = false;
+  login_data:any;
+  spinnerShow: boolean = false;
 
 
   constructor(
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute,
     private router: Router,private apiService:ApiService, private toastr: ToastrService
-    )
-  {
-    // this.initForm();
-  }
-
+    ) {}
 
   private initForm() {
     this.loginForm = this.formBuilder.group({
@@ -47,17 +44,30 @@ export class LoginComponent implements OnInit{
   }
 
   onSubmit(){
+
     this.submitted = true;
+    this.spinnerShow=true;
     this.loginForm.markAllAsTouched();
+    this.login_data = this.loginForm.value;
+    console.log("this.login_data",this.login_data)
     if (this.loginForm.invalid) {
-      this.toastr.error("Fields are required !", 'ALERT !');
+      this.toastr.error("Fields are Required !", 'ALERT !');
       return;
     }
     else {
-      this.router.navigate(['dashboard']);
-      // this.apiService.loginValidationService(data).subscribe(resp=>{
-      //   console.log(data)
-      // });
+      this.apiService.loginValidationService(this.login_data).subscribe(resp=>{
+        console.log("this.login_data",resp);
+        if(resp.result==0)
+          {
+            this.spinnerShow=false;
+            this.toastr.success(resp.msg);
+            this.router.navigate(['dashboard']);
+          }
+          else
+          {
+            this.toastr.error(resp.msg,'Alert !')
+          }
+      });
     }
   }
 
