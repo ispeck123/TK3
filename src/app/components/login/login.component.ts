@@ -20,10 +20,7 @@ export class LoginComponent implements OnInit{
   spinnerShow: boolean = false;
 
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private router: Router,private apiService:ApiService, private toastr: ToastrService
-    ) {}
+  constructor(private formBuilder: FormBuilder,private router: Router,private apiService:ApiService, private toastr: ToastrService) {}
 
   private initForm() {
     this.loginForm = this.formBuilder.group({
@@ -44,20 +41,20 @@ export class LoginComponent implements OnInit{
   }
 
   onSubmit(){
-
     this.submitted = true;
     this.spinnerShow=true;
     this.loginForm.markAllAsTouched();
     this.login_data = this.loginForm.value;
     console.log("this.login_data",this.login_data)
     if (this.loginForm.invalid) {
+      this.spinnerShow=false;
       this.toastr.error("Fields are Required !", 'ALERT !');
       return;
     }
     else {
       this.apiService.loginValidationService(this.login_data).subscribe(resp=>{
         console.log("this.login_data",resp);
-        if(resp.result==0)
+        if(resp.result === 0)
           {
             this.spinnerShow=false;
             this.toastr.success(resp.msg);
@@ -65,7 +62,8 @@ export class LoginComponent implements OnInit{
           }
           else
           {
-            this.toastr.error(resp.msg,'Alert !')
+            this.toastr.error(resp.msg,'Alert !');
+            this.spinnerShow=false;
           }
       });
     }

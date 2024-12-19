@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 declare var $: any; 
 
@@ -13,7 +14,7 @@ export class MenuComponent implements OnInit {
   isPanelOpen = false;
   menu:any;
 
-  constructor(private router: Router) {
+  constructor(private router: Router,private toastr: ToastrService) {
     this.menu={
 
     }
@@ -21,6 +22,15 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
    
+  }
+
+  logout(){
+    const confirmation = window.confirm("Are you sure , you want to Log Out?");
+    if (confirmation) {
+      sessionStorage.clear();
+      this.router.navigate(['login']);
+      this.toastr.success("Logged out successfully !")
+    }
   }
 
   togglePanel() {
